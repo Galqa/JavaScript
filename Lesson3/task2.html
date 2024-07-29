@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let birthYear = +prompt("Введіть рік народження"); // + - значить перетворення на число
+        let currentYear = new Date().getFullYear();
+        let curretAge = currentYear - birthYear; // поточний рік віднімається від року народження
+
+        const adultAge = 18; // чи повнолітній користувач?
+        if (curretAge >= adultAge) {
+            alert("Повнолітній користувач");
+        }
+        else {
+            alert("Неповнолітній користувач");
+        }
+    </script>
+</body>
+
+</html
