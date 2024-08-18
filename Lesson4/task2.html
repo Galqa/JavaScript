@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let initialValue = "І що сало ласощі";
+        let value = initialValue.replace(/\s+/g, "").toLowerCase(); // replace - функція для зміни одного символа на інший з допомогою регулярних виразів
+        let len = value.length; // довжина 6 символів
+
+        let isPalindrome;
+
+        for (let i = 0; i < len / 2; i++) {
+            if (value[i] !== value[len - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+            isPalindrome = true;
+        }
+
+        if (isPalindrome) {
+            console.log("Значення " + initialValue + " є паліндромом");
+        } else {
+            console.log("Значення " + initialValue + " не є паліндромом");
+        }
+    </script>
+</body>
+
+</html>
