@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Написати програму, яка генерує випадкове число від 1 до 100 і дозволяє користувачу відгадати його, надаючи підказки
+    "більше" або "менше".
+    Програма повинна продовжувати запитувати користувача числа, доки він не вгадає правильне.
+    Коли користувач відгадає число, програма повинна вивести на екран усі значення які були введені.
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = []; // змінна перекладається - спроба
+
+        let gameIsOver = false;
+        while (!gameIsOver) { // знак ! змінює значення на протилежне
+            let value = Number(prompt("Введіть значення"));
+            attempts.push(value);
+
+            if (value == randomNumber) {
+                alert("Ви вгадали задане число" + randomNumber);
+                gameIsOver = true;
+            }
+            else if (value > randomNumber) {
+                alert("Я загадав значення менше ніж" + value);
+            }
+            else if (value < randomNumber) {
+                alert("Я загадав значення більше ніж" + value);
+            }
+        }
+
+        console.log("Ви зробили " + attempts.length + " спроб ");
+        attempts.forEach(x => console.log(x));
+    </script>
+</body>
+
+</html>

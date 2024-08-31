@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    // Написати програму, яка знайде min та max значення масиву, та виведе суму всіх елементів масиву. Двома способами.
+
+    <script>
+
+        function min(array) {
+            return Math.min(...array); // Math - об'єкт, min - це метод цього об'єкту. ... - це розчипити масив на окремі його значення
+
+
+            // let min = Number.MAX_VALUE; // мінімальне значення - це максимально можливе значення
+            // цикл forof
+            // for (const value of array) {
+            //if (value < min) {
+            //min = value;
+            // }
+            //  }
+            // return min;
+        }
+
+        // function max(array) {
+        //     let max = Number.MIN_VALUE;
+        //     for (const value of array) {
+        //         if (value > min) {
+        //             max = value;
+        //         }
+        //     }
+        //     return max; b
+        // }
+
+        function max(array) {
+            return Math.max(...array);
+        }
+
+
+        function sum(array) {
+            let sum = 0;
+            for (const value of array) {
+                // sum += value; // або
+                sum = sum + value;
+            }
+            return sum;
+        }
+
+        let values = [10, 20, 4, 6, 11, 9, 125, 1, 8, 0, 3];
+        const m = min(values);
+        console.log(m);
+
+        console.log(max(values));
+        console.log(sum(values));
+
+    </script>
+</body>
+
+</html>

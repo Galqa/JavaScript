@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // щоб вивести весь масив на екран, потрібно ЦИКЛИ щоб не виводити кожен елемент окремо на екран
+        let cities = ["Kyiv", "Paris", "London"];
+
+        //console.log(cities[0]);
+        //console.log(cities[1]);
+        //console.log(cities[2]);
+
+
+
+        // index - лічильник, починається з 0. length - вказує останній елемент
+        for (let index = 0; index < cities.length; index++) {
+            //console.log(cities[index]);
+
+            const city = cities[index];
+            console.log(city);
+        }
+        // цикл forin - його задача пройти по всім властивостям які знаходяться в об'єкті 
+        for (const key in cities) {
+            console.log(key); // на екран виведуться не назви масива а їх властивості
+        }
+        // цикл forof - як з об'єкта витянути значення. Частіше використовується в колекціях
+        for (const city of cities) {
+            console.log(city);
+        }
+
+
+    </script>
+</body>
+
+</html>
