@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // ПРОСТИЙ ВАРІАНТ
+        // масив із іменами продуктів
+        // let names = [];
+        // names[0] = "Кулька";
+        // names[1] = "Кукла";
+        // names[2] = "Лімузин";
+
+        // // масив із цінами продуктів
+        // let prices = [];
+        // prices[0] = 11;
+        // prices[1] = 33;
+        // prices[2] = 77;
+
+        // // масив з кількістю продуктів, що купуються
+        // let products = [];
+
+        // цикл для отримання кількості продуктів, що купуються
+        // for (let index = 0; index < names.length; index++) {
+        //     const name = names[index];
+        //     const price = prices[index];
+
+        //     products[index] = +prompt(`Вкажіть кількість продуктів '${name}', ціна ${price}`, 0);
+        // }
+
+        // // цикл для розрахунку загальної ціни куплених продуктів
+        // let totalPrice = 0;
+        // for (let index = 0; index < products.length; index++) {
+        //     totalPrice += prices[index] * products[index];
+        // }
+
+        // alert(`Сума Вашого замовлення ${totalPrice}.`);
+
+        // let isFreeShipping = totalPrice > 1000;
+        // if (isFreeShipping) // іноді в умові використовується лише одна змінна
+        // {
+        //     alert("Доставка буде безкоштовною.");
+        // }
+
+
+
+        // Завдання по mvc фреймворк. Ідея використання об'єктів з використанням бізнес - логіки
+
+        let shoppingCart = { // об'єкт який контролює процес(рахувати). КОНТРОЛЕР
+            cart: [],
+
+            add(product, count) { // додавання продуктів
+                this.cart.push({ product: product, count: count });
+            },
+
+            getTotalPrice() { // що зберігається у shoppingCart - підрахунок і кількість продуктів
+                let sum = 0;
+                this.cart.forEach(item => sum += item.product.price * item.count);
+                return sum;
+            }
+        };
+
+        let shopDatabase = { // БД продуктів. Об'єкт який зберігає дані. МОДЕЛЬ
+
+            products: [             // перелік продуктів що зберігаютьсяв об'єкті
+                { name: "Кулька", price: 11 },
+                { name: "Кукла", price: 33 },
+                { name: "Лімузин", price: 77 }],
+
+            add: function (name, price) { // функція додавання продуктів
+                this.products.push({ name: name, price: price });
+            },
+
+            remove: function (name) { // шукає продукт по імені
+                let product = this.products.filter(x => x.name == name)[0];
+                let index = this.indexOf(product);
+                this.products.splice(index, 1);
+            }
+        };
+
+        let uiController = { // об'єкт з яким взаємодіє користувач
+            display: function (message) {
+                console.log(message);
+            },
+
+            // скільки кожного продукту хоче купити користувач
+            promptNumber: function (message) {
+                return +prompt(message)
+            },
+
+            promptByList: function (list, messageTemplateFn) {
+                return list.map(element => this.promptNumber(messageTemplateFn(element)))
+            },
+
+            displayList: function (list, messageTemplateFn) { // показує список
+                list.forEach(x => this.display(messageTemplateFn(x))) // x - в якості параметра
+            }
+        };
+
+        // app
+        let productCount = uiController.promptByList(shopDatabase.products, x => `${x.name} = ${x.price}грн`);
+
+        shopDatabase.products.forEach((p, index) => {
+            shoppingCart.add(p, productCount[index]);
+        });
+
+        let total = shoppingCart.getTotalPrice(); // порахували весь прайс
+        console.log(total);
+    </script>
+</body>
+
+</html>
