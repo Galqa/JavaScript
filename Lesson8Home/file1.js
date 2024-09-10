@@ -23,3 +23,24 @@ const books = [
 ];
 */
 
+
+const books = [
+    { title: "1984", author: "Джордж Орвелл", year: 1949, genre: "Антиутопія" },
+    { title: "Леденцовые туфельки", author: "Джоан Харріс", year: 2009, genre: "Сучасна проза" },
+    { title: "Місячна стежка ", author: "Сара Джіо", year: 2016, genre: "Роман" },
+    { title: "Дыти капітана Гранта ", author: "Жуль Верн", year: 1868, genre: "Пригодницький роман" },
+];
+
+function displayBooks() {
+    const bookList = document.querySelector('#bookList');
+    books.forEach(book => {
+        const bookDiv = document.createElement('div');
+        bookDiv.innerHTML = `<h3>${book.title}</h3>
+        <p><strong>Автор:</strong>${book.author}</p>
+        <p><strong>Рік видання:</strong>${book.year}</p>
+        <p><strong>Жанр:</strong>${book.genre}</p>`;
+        bookList.appendChild(bookDiv);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', displayBooks);
