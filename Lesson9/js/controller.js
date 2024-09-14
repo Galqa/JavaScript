@@ -17,8 +17,10 @@ function render() {
     contactList.renderWithTemplate(contactBook.contacts, html, template);
 }
 
-contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+contactForm.addEventListener("submit", function (e) { // при натисканні Зберегти, з'являється віконечко test
+    e.preventDefault(); // ця дія забороняє браузеру виконати дефолтну операцію. Щоб при натисканні на посилання браузер не переходив за цим посиланням.
+    //Таким чином дані користувача не будуть відправлятися, замість цього з'явиться повідомлення що в alert написано.
+    // alert("test");
 
     let contact = {
         firstName: firstNameInput.value,
@@ -34,7 +36,7 @@ contactForm.addEventListener("submit", function (e) {
         contactBook.update(editId, contact);
         editId = null;
     }
-    
+
     render();
 });
 
