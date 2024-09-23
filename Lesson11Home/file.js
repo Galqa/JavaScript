@@ -43,7 +43,7 @@ document.getElementById('getWeatherBtn').addEventListener('click', getWeather);
 
 async function getWeather() { // обробник події для кнопки, який викликає функцію getWeather
     const city = document.getElementById('cityInput').value;
-    const apiKey = 'afab21105b952f2cb5171015263bc5c9'; // мій ключ API 
+    const apiKey = ''; // мій ключ API 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=uk`;
 
     try {
