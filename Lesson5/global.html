@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myGlobal = "good"; // Глобальні змінні в JS - (видимі усюди)тобто в різних скриптах потрібні різні змінні, щоб не повторювались.
+
+        if (true) {
+            let a = "local value";
+            console.log(myGlobal);
+            console.log(a);
+        }
+        console.log(myGlobal);
+        // console.log(a); змінна a буде дієва тільки в перших дужках. Так, можна створити нову змінну a, але вже з іншим значенням.
+        // Або змінну a винести за перші фіг.дужки і вона стане
+
+    </script>
+</body>
+
+</html>

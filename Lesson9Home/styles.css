@@ -1,0 +1,18 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: magenta;
+    display: inline-block;
+
+}
+
+form {
+    margin-bottom: 50px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 40px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Перевага цього коду: якщо додається якась нова умова, то не потрібно вносити зміну в бізнес-логіку. Бізнес-логіка буде сталою, вона не змінюється.
+        // Просто можна додавати нові властивості: test і т.д.
+        // Ще як варіант замість switch
+        let options = {
+            circle: function () {
+                console.log("circle");
+            },
+            rectangle: function () {
+                console.log("rectangle");
+            },
+            triangle: function () {
+                console.log("triangle");
+            },
+            test: function () { }
+        }
+
+        let option = prompt("select circle, rectangle or traingel");
+        options[option](); // щоб не писати if-else
+
+    </script>
+</body>
+
+</html>

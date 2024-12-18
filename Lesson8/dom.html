@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"> // корінь дерева
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="element">RainGo</p> // h1 і p - це елементи. Щоб мати доступ до елемента, потрібно створити в script змінну e
+    <p>Pleace</p>
+    <p><a href=""></a></p>
+
+    <script>
+        // let e = document.querySelector("#element"); дозволяє в дужках записати складний вираз 
+        let e = document.getElementById("element"); // у змінну е буде записано елемент h1
+        // e.innerHTML = "<b>Hello</b>" // властивість, яка в element додає новостворений текст
+        // e.textContent = "<b>Hello</b>" // Повертає або встановлює текстовий вміст елемента та всіх його нащадків. Ігнорує всі HTML-теги та повертає лише текст.
+        //Використовується для отримання або встановлення тексту без форматування. Безпечніший для використання, оскільки не інтерпретує HTML, що допомагає уникнути XSS-атак1.
+        e.className = "test";
+
+    </script>
+
+</body>
+
+</html>

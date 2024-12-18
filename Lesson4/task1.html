@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        // виділяємо область яку потрібно огорнути в потрібний цикл і зліва натискаємо жовту лампочку.
+        // Вибираємо потрібний цикл.
+
+        let gameIsOver = false;
+        while (!gameIsOver) { // знак ! змінює значення на протилежне
+            let value = Number(prompt("Введіть значення"));
+
+            if (value == randomNumber) {
+                alert("Ви вгадали задане число" + randomNumber);
+                gameIsOver = true;
+            }
+            else if (value > randomNumber) {
+                alert("Я загадав значення менше ніж" + value);
+            }
+            else if (value < randomNumber) {
+                alert("Я загадав значення більше ніж" + value);
+            }
+        }
+    </script>
+</body>
+
+</html>

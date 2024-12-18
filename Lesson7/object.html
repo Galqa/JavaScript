@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let product1 = { // об'єкт
+            name: "Phone", // властивість
+            price: 100,
+            displayInfo: display  // це метод з допомогою якого продукти можуть самі виводити інформацію про себе
+        };
+
+        let product2 = {};  // об'єкт створюється порожнім
+        product2.name = "Laptop";
+        product2.price = 777;
+        product2.displayInfo = display;
+
+        function display() {
+            console.log(this.name);
+            console.log(this.price);
+        }
+        display.apply({ name: "a", price: 1 }); // apply - це метод коли функція застосована на об'єкті з створеними властивостями
+        product1.displayInfo();
+        product2.displayInfo();
+
+        // let product3 = new Object(); // або так можна створювати об'єкт
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Product {                       // буде описувати майбутні об'єкти які будуть створюватись
+            constructor(id, name, price) {
+                this.id = id;
+                this.name = name;
+                this.price = price;
+            }
+            displayInfo() {
+                console.log(this.name);
+                console.log(this.price);
+            };
+        }
+
+
+        let product1 = createProduct(1, "Phone", 100); // отже лише одним рядком створимо product
+        let product2 = createProduct(2, "Laptop", 777);
+
+        let product3 = new Product(1, "Phone", 100); // створення нових об'єктів
+        let product4 = new Product(2, "Laptop", 777);
+
+        function createProduct(id, name, price) { // Це функція яка при виклику:
+            let product = {}; // створює порожній об'єкт
+
+            product.id = id; // заповнює об'єкт
+            product.name = name;
+            product.price = price;
+            product.displayInfo = function () {
+                console.log(this.name);
+                console.log(this.price);
+            }
+            return product; // і повертає об'єкт.
+        }
+
+
+        product1.displayInfo();
+        product2.displayInfo();
+        product3.displayInfo();
+        product4.displayInfo();
+    </script>
+</body>
+
+</html>

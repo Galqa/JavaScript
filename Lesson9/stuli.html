@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myClass {
+            color: white;
+            background-color: orangered;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv" onclick="alert('Hi')">Hello Rain</div> // натиснувши на Hello Rain виведеться Hi
+    <div id="myDiv" onclick="changeColor();">Hello Rain</div> натиснувши на Hello Rain буде колір. 1 варіант обробника
+    на події
+    <script>
+        let div = document.getElementById("myDiv"); // створюємо змінну div, щоб зміну ініціалізувати створюємо document властивість і використовуємо метод getelementById і шукаємо елемент по id.
+        // div. onclick = changeColor; // 2варіант 
+
+        div.addEventListener("click", changeColor); // 3варіант рядок 18 повинен бути
+        // div.removeEventListener("click",changeColor); // видаляє
+
+        function changeColor() {
+            div.classList.add("myClass"); // використання оформлення з допомогою класів більш практичніше, з допомогою add - додавання.
+        }
+
+
+        //div.style.color = "white";
+        //div.style.backgroundColor = "blue";
+        //div.style.padding = "10px";
+        //div.classList.add("myClass"); // використання оформлення з допомогою класів більш практичніше, з допомогою add - додавання.
+
+        // Якщо шукати оформлення - то з допомогою CSS. Якщо шукати логіку - то з допомогою JS. Якщо шукати структуру - то в HTML.
+    </script>
+</body>
+
+</html>
